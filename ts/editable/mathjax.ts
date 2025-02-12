@@ -33,6 +33,7 @@ function getEmptyIcon(style: HTMLStyleElement): [string, string] {
 
 export function convertMathjax(
     input: string,
+    preamble: string,
     nightMode: boolean,
     fontSize: number,
 ): [string, string] {
@@ -45,6 +46,7 @@ export function convertMathjax(
 
     let output: Element;
     try {
+        // TODO: Implement preamble
         output = globalThis.MathJax.tex2svg(input);
     } catch (e) {
         return ["Mathjax Error", String(e)];

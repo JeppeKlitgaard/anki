@@ -66,6 +66,8 @@ pub struct NotetypeSchema11 {
     pub(crate) original_stock_kind: i32,
     #[serde(default, skip_serializing_if = "is_default")]
     pub(crate) original_id: Option<i64>,
+    #[serde(default)]
+    pub(crate) mathjax_preamble: String,
     #[serde(flatten)]
     pub(crate) other: HashMap<String, Value>,
 }
@@ -112,6 +114,7 @@ impl From<NotetypeSchema11> for Notetype {
                 reqs: nt.req.0.into_iter().map(Into::into).collect(),
                 original_stock_kind: nt.original_stock_kind,
                 original_id: nt.original_id,
+                mathjax_preamble: nt.mathjax_preamble,
                 other: other_to_bytes(&nt.other),
             },
             fields: nt.flds.into_iter().map(Into::into).collect(),
@@ -176,6 +179,7 @@ impl From<Notetype> for NotetypeSchema11 {
             req: CardRequirementsSchema11(c.reqs.into_iter().map(Into::into).collect()),
             original_stock_kind: c.original_stock_kind,
             original_id: c.original_id,
+            mathjax_preamble: c.mathjax_preamble,
             other: parse_other_fields(&c.other, &RESERVED_NOTETYPE_KEYS),
         }
     }
