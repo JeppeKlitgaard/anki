@@ -20,7 +20,7 @@
    <item>
     <widget class="QTabWidget" name="qtabwidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -63,6 +63,40 @@
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>editing_mathjax</string>
+      </attribute>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>8</y>
+         <width>334</width>
+         <height>14</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>notetypes_mathjax_preamble</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="mathjaxPreamble">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>28</y>
+         <width>334</width>
+         <height>231</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>notetypes_mathjax_preamble_tooltip</string>
+       </property>
+       <property name="tabChangesFocus">
+        <bool>true</bool>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>

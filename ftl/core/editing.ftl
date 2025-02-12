@@ -31,6 +31,7 @@ editing-justify = Justify
 editing-latex = LaTeX
 editing-latex-equation = LaTeX equation
 editing-latex-math-env = LaTeX math env.
+editing-mathjax = MathJax
 editing-mathjax-block = MathJax block
 editing-mathjax-chemistry = MathJax chemistry
 editing-mathjax-inline = MathJax inline
@@ -99,7 +100,7 @@ editing-image-occlusion-text-tool = Text
 editing-image-occlusion-toggle-mask-editor = Toggle Mask Editor
 editing-image-occlusion-reset = Reset Image Occlusion
 editing-image-occlusion-confirm-reset = Are you sure you want to reset this image occlusion?
- 
+
 ## You don't need to translate these strings, as they will be replaced with different ones soon.
 
 editing-html-editor = HTML Editor

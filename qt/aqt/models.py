@@ -149,6 +149,8 @@ class Models(QDialog):
 
     def current_notetype(self) -> NotetypeDict:
         row = self.form.modelsList.currentRow()
+        print(self.mm)
+        print(row)
         return self.mm.get(NotetypeId(self.models[row].id))
 
     def onAdd(self) -> None:
@@ -200,6 +202,7 @@ class Models(QDialog):
         frm.latexsvg.setChecked(nt.get("latexsvg", False))
         frm.latexHeader.setText(nt["latexPre"])
         frm.latexFooter.setText(nt["latexPost"])
+        frm.mathjaxPreamble.setText(nt["mathjaxPreamble"])
         d.setWindowTitle(
             without_unicode_isolation(tr.actions_options_for(val=nt["name"]))
         )
@@ -211,6 +214,7 @@ class Models(QDialog):
         nt["latexsvg"] = frm.latexsvg.isChecked()
         nt["latexPre"] = str(frm.latexHeader.toPlainText())
         nt["latexPost"] = str(frm.latexFooter.toPlainText())
+        nt["mathjaxPreamble"] = str(frm.mathjaxPreamble.toPlainText())
         update_notetype_legacy(parent=self, notetype=nt).success(
             self.refresh_list
         ).run_in_background()
